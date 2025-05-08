@@ -34,4 +34,8 @@ public class InMemoryKV implements KeyValueStorage {
     public Map<String, String> toMap() {
         return new HashMap<>(storage);
     }
+
+    public void addAll(Map<String, String> src) {
+        this.storage.putAll(src);
+    }
 }
