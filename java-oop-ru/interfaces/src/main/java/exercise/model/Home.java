@@ -1,4 +1,4 @@
-package exercise;
+package exercise.model;
 
 public interface Home {
     public Double getArea();

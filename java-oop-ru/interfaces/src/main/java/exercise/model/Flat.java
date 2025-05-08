@@ -1,4 +1,4 @@
-package exercise;
+package exercise.model;
 
 import lombok.Getter;
 
@@ -37,6 +37,6 @@ public class Flat implements Home {
     }
 
     public String toString() {
-        return String.format("Квартира площадью %0.1f метров на %d этаже", this.getArea(), this.getFloor());
+        return String.format("Квартира площадью %.1f метров на %d этаже", this.getArea(), this.getFloor());
     }
 }

@@ -1,4 +1,4 @@
-package exercise;
+package exercise.model;
 
 import lombok.Getter;
 
@@ -25,6 +25,6 @@ public class Cottage implements Home {
     }
 
     public String toString() {
-        return String.format("%d этажный коттедж площадью %0.1f метров", this.getFloorCount(), this.getArea());
+        return String.format("%d этажный коттедж площадью %.1f метров", this.getFloorCount(), this.getArea());
     }
 }
