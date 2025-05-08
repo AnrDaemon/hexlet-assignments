@@ -5,10 +5,14 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class App {
-    public static KeyValueStorage swapKeyValue(KeyValueStorage src) {
+    public static void swapKeyValue(KeyValueStorage src) {
         var newMap = src.toMap().entrySet().stream()
                 .collect(Collectors.toMap(Entry::getValue, Entry::getKey, (a, b) -> b, LinkedHashMap::new));
-
-        return new InMemoryKV(newMap);
+        for (var e : src.toMap().entrySet()) {
+            src.unset(e.getKey());
+        }
+        for (var e : newMap.entrySet()) {
+            src.set(e.getKey(), e.getValue());
+        }
     }
 }
