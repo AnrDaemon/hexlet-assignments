@@ -1,9 +1,14 @@
 package exercise;
 
-import java.util.Map;
+import java.util.LinkedHashMap;
 import java.util.Map.Entry;
-import java.util.Set;
+import java.util.stream.Collectors;
 
-// BEGIN
+public class App {
+    public static KeyValueStorage swapKeyValue(KeyValueStorage src) {
+        var newMap = src.toMap().entrySet().stream()
+                .collect(Collectors.toMap(Entry::getValue, Entry::getKey, (a, b) -> b, LinkedHashMap::new));
 
-// END
+        return new InMemoryKV(newMap);
+    }
+}
