@@ -17,6 +17,6 @@ class App {
             e.printStackTrace();
         }
 
-        list.size();
+        System.out.println(list.size());
     }
 }
